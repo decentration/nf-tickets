@@ -20,8 +20,9 @@ export default function AboutMain () {
           <p
             className="text-center text-large pb-5"
             style={{ maxWidth: '920px' }}>
-            Share your love of {giftTheme?.network} with friends and family and help onboard them to the network.&nbsp;
-            {giftTheme?.network} Pizza lets you send {giftTheme?.content} to anyone, even if they don’t already have a {giftTheme?.network} account.
+            New-Futures welcomes all EDG Holders to gain access to our digital gallery. 
+
+            Click below to sign in.
           </p>
         </div>
         <ProcessExplainerCard giftTheme={giftTheme} />

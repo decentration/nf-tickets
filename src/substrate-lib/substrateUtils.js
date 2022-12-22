@@ -36,6 +36,17 @@ const utils = {
     }
   },
 
+  getAccountName: (account) => {
+    const { pairOrName} = account || {};
+    if (typeof pairOrName === 'string' || pairOrName instanceof String) {
+      // the stored value is an address
+      return pairOrName;
+    } else {
+      // the stored value is an account
+      return pairOrName?.meta?.name;
+    }
+  },
+
   validateAddress: (address, ss58Format) => {
     try {
       const decodedAddress = decodeAddress(address, ss58Format);

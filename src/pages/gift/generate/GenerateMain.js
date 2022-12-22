@@ -13,6 +13,7 @@ import BN from 'bn.js';
 import ParityQRSigner from '../ParityQRSigner';
 import { web3FromSource } from '@polkadot/extension-dapp';
 import Landing from './Landing';
+import ConnectButton from '../header/ConnectButton';
 import { Row, Col, Card, Container } from 'react-bootstrap';
 import ConnectAccount from './ConnectAccount';
 import Header from '../header/Header';
@@ -126,6 +127,8 @@ export default function GenerateMain () {
     }
     return { pairOrAddress, signer };
   };
+
+  
 
   const setGiftHandler = (giftInfo) => {
     setGiftInfo({

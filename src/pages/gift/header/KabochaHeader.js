@@ -1,4 +1,4 @@
-import { Dropdown, Nav, Navbar, Media, Row, Col } from 'react-bootstrap';
+import { Dropdown, Nav, Navbar, Media, Row, Col, Button } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router-dom';
 import { stringHelpers } from '../../../utils';
 import Identicon from '@polkadot/react-identicon';
@@ -6,16 +6,19 @@ import { Circle, DotsThree, ImageSquare } from 'phosphor-react';
 import config from '../../../config';
 import KusamaLogo from '../../../images/kusama_logo.png';
 import KusamaIcon from '../../../images/kusama_icon.png';
-import KabochaIcon from '../../../images/kabocha.svg';
+//import KabochaIcon from '../../../images/kabocha.svg';
+import ConnectButton from './ConnectButton';
+import utils from '../../../substrate-lib/substrateUtils';
 
 
 
 const AccountInfoBox = ({ accountAddress }) => {
-  const addressStr = stringHelpers.truncateMiddle(accountAddress, 5);
+  const addressStr = stringHelpers.truncateMiddle(accountAddress, 10);
+  //const nameString = getAccountName?.meta?.name;
   return (
     <Media className="d-flex align-items-center">
       <div className="mr-1">
-        <img className="kab-logo" src={KabochaIcon} />
+        {/* <img className="kab-logo" src={KabochaIcon} /> */}
       </div>
       <Media.Body>
         <Row>
@@ -41,27 +44,29 @@ export default function Header ({ selectedAccount }) {
         variant="dark"
       >
         <Navbar.Brand>
-          <a href="/" rel="noopener noreferrer">
-            <img
+          {/* <a href="/" rel="noopener noreferrer"> */}
+            <div className="text-black">NEW-FUTURES</div>
+            {/* <img
               width={120}
               className="p-1 d-none d-sm-inline-block"
               src={KabochaIcon}
-              alt={'Kabocha'}
-            />
-            <img
+              alt={'Kabocha}
+            /> */}
+            {/* <img
               width={42}
               className="p-1 d-sm-none"
               src={KabochaIcon}
-              alt={'Kabocha'}
-            />
-          </a>
+              alt={'Kabocha}
+            /> */}
+          {/* </a> */}
+          
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse
           id="basic-navbar-nav"
           className="justify-content-center"
         >
-          <Nav className="nav-pills shadow-sm">
+          {/* <Nav className="nav-pills shadow-sm">
             <Nav.Item>
               <Nav.Link
                 className={location.pathname === '/claim' && 'active'}
@@ -78,10 +83,11 @@ export default function Header ({ selectedAccount }) {
                 Gift Pizza
               </Nav.Link>
             </Nav.Item>
-          </Nav>
+          </Nav> */}
+          
         </Navbar.Collapse>
         <div className="d-flex align-items-center justify-content-end">
-          {selectedAccount && (
+          {selectedAccount ? (
             <>
               <div className="d-none d-sm-block w-100 d-sm-none" />
               <div className="d-none d-sm-block flex-grow-0 justify-content-end mr-2 shadow-sm border-0 p-0">
@@ -91,14 +97,21 @@ export default function Header ({ selectedAccount }) {
                     fontWeight: '400',
                     height: '42px'
                   }}
-                  className="account-box align-items-center text-center d-flex bg-transparent balance-text"
+                  className="account-box align-items-center text-center d-flex bg-white  balance-text"
                 >
-                  <AccountInfoBox accountAddress={selectedAccount} />
+                  <AccountInfoBox  accountAddress={selectedAccount} />
                 </div>
               </div>
             </>
-          )}
-          <Dropdown id="dropdown-item-button">
+          )
+        :
+        (
+          <ConnectButton />
+        )
+        
+        }
+          
+          {/* <Dropdown id="dropdown-item-button">
             <Dropdown.Toggle
               className="btn-dropdown p-1 rounded shadow-sm"
               type="button"
@@ -116,8 +129,8 @@ export default function Header ({ selectedAccount }) {
                 onClick={() => history.push('/about')}
               >
                 <ImageSquare className="mr-2" size={18} />
-                About Pizza
-              </Dropdown.Item>
+                About New-Futures
+              </Dropdown.Item> */}
               {/* {polkadotApp && (
                 <Dropdown.Item
                   className="px-3"
@@ -144,8 +157,8 @@ export default function Header ({ selectedAccount }) {
                 </Dropdown.Item>
                 
               )} */}
-            </Dropdown.Menu>
-          </Dropdown>
+            {/* </Dropdown.Menu>
+          </Dropdown> */}
         </div>
       </Navbar>
     </>
