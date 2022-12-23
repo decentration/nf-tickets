@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { Row, Col, Form, Card, InputGroup } from 'react-bootstrap';
 import CardHeader from '../../../components/CardHeader';
-import { GenerateContext } from './GenerateMain';
+import { GenerateContext } from './SignInMain';
 import { useSubstrate, utils } from '../../../substrate-lib';
 import { Formik } from 'formik';
 import config from '../../../config';
