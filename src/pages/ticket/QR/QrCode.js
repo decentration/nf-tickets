@@ -15,7 +15,7 @@ const QrCode = ({ number }) => {
     setTicket(e.target.value);
   };
 
-  const urlValue = ['https://events.new-futures.co/enter/' + number.toString()].join();
+  const urlValue = ['https://tickets.new-futures.co/enter/' + number.toString()].join();
 
 
   const qrcode = (

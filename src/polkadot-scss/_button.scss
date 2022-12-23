@@ -211,6 +211,51 @@
   }
 }
 
+.btn-confirm {
+  color: $white;
+  background-color: black;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.2s ease, border 1ms ease;
+  will-change: transform;
+  transform: scale(0.999);
+
+  &:before {
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgb(87, 226, 0);
+    transition: all 0.2s ease;
+    will-change: transform;
+    color: transparent;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: none;
+    text-decoration: none;
+    color: $white;
+    will-change: transform;
+    transform: scale(1.05);
+  }
+
+  &:hover:before,
+  &:focus:before,
+  &:active:before {
+    left: 0;
+    width: 100%;
+  }
+
+  &:disabled {
+    opacity: 0.5 !important;
+    pointer-events: none;
+  }
+}
+
 .btn-card, .card-link {
   display: inline-flex;
   align-items: center;

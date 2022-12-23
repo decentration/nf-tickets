@@ -42,7 +42,7 @@ export default function LedgerInstructions ({
         <Row className="justify-content-center">
           <Col sm="11">
             <CardLink
-              hRef="https://support.ledger.com/hc/en-us/articles/360016289919-Polkadot-DOT"
+              hRef="https://support.ledger.com/hc/en-us/articles/4409811412625-Edgeware-EDG-?docs=true"
               title="Step 1"
               subtitle={`Install the ${giftTheme?.network} app on your Ledger device`}
             />

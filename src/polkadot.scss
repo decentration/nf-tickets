@@ -208,6 +208,20 @@ $border-radius: 0.5rem;
   padding: 0;
 }
 
+.bgvid {
+  position: fixed;
+  top:0;
+  background-color: black;
+  width: 100%;
+}
+
+.video {
+ 
+  width: 100%;
+  position: static;
+  top: 0;
+}
+
 // import should be at the end
 @import '~bootstrap/scss/bootstrap';
 @import 'polkadot-scss/variables';

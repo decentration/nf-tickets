@@ -37,17 +37,20 @@ function Body () {
             message={`Connecting to ${giftTheme.network}...`}
           />
         </Route>
+        
         <Route path={'/generate'}>
-          <BackgroundVideo />
+        <BackgroundVideo />
        <div className="content">
           <GenerateMain />
-          </div>
+          
+          
       
    
           <Processing
             show={apiState !== 'READY'}
             message={`Connecting to ${giftTheme.network}...`}
           />
+          </div>
           
         </Route>
         <Route path={'/home'}>

@@ -15,7 +15,7 @@ const uniquesPalletGiftProvider = {
       interimAddress,
       gift?.amount,
       feeMultiplierValue, // fee multiplier of 1x
-      'gift::create'
+      'newf::create'
     );
   },
   claimGift: async (api, interimAccount, recipientAccount) => {
@@ -24,7 +24,7 @@ const uniquesPalletGiftProvider = {
       api,
       interimAccount,
       recepientAddress,
-      'gift::claim'
+      'newf::claim'
     );
     const claimed = await getClaimedAssets(api, events);
     return claimed;
@@ -35,7 +35,7 @@ const uniquesPalletGiftProvider = {
       api,
       interimAccount,
       senderAddress,
-      'gift::remove'
+      'newf::remove'
     );
   },
   queryGift: async (api, giftAccount) => {

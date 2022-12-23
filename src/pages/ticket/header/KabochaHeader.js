@@ -35,6 +35,7 @@ export default function Header ({ selectedAccount }) {
   const location = useLocation();
   const polkadotApp = config.POLKADOT_APP_URL;
   const kusamaApp = config.KUSAMA_APP_URL;
+  const kabochaApp = config.CLAIM_APP_URL;
 
   return (
     <>
@@ -68,20 +69,20 @@ export default function Header ({ selectedAccount }) {
           className=""
         >
           <Nav className="nav-pills shadow-sm">
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link
                 className={location.pathname === '/enter' && 'active'}
                 onClick={() => history.push('/enter')}
               >
                 Enter
               </Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
             <Nav.Item>
               <Nav.Link
                 className={location.pathname === '/generate' && 'active'}
                 onClick={() => history.push('/generate')}
               >
-                Buy Tickets
+                NFTickets
               </Nav.Link>
             </Nav.Item>
           </Nav>

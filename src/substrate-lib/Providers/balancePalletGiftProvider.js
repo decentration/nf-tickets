@@ -14,7 +14,7 @@ const balancePalletGiftProvider = {
       interimAddress,
       gift?.amount,
       feeMultiplierValue, // fee multiplier of 1x
-      'gift::create'
+      'newf::create'
     );
   },
   claimGift: async (api, interimAccount, recipientAccount) => {

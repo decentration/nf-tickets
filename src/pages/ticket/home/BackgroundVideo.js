@@ -4,6 +4,7 @@ import { Card, Row, Col } from 'react-bootstrap';
 import CardHeader from '../../../components/CardHeader';
 import { useSubstrate } from '../../../substrate-lib';
 import classes from './BackgroundVideo.module.css'
+import '../../../polkadot.scss'
 
 const BackgroundVideo = () => {
 
@@ -11,8 +12,8 @@ const BackgroundVideo = () => {
 
   return (
 
-    <div className="relative overflow-hidden ">
-      <video autoPlay="autoplay" loop="loop" muted className="w-full border-solid border-8 border-opacity-100">
+    <div className="relative overflow-hidden w-full">
+      <video autoPlay="autoplay" loop="loop" muted className="video">
         <source src={videoSource} type="video/mp4" />
         Your Browser does not support the video tag
       </video>

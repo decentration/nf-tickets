@@ -111,20 +111,20 @@ export default function PresentGift ({ giftInfo, removeGiftHandler }) {
         <Row>
           <Col className="px-5 flex-column flex-md-row d-flex justify-content-end">
             <button
-              className="btn btn-link ml-3"
+              className="btn btn-confirm ml-3"
               onClick={() => removeGiftHandler(secret)}>
               Refund Ticket
             </button>
             <button
-              className="btn btn-link ml-3"
+              className="btn btn-confirm ml-3"
               onClick={() => printHandler()}>
               Print
             </button>
             <CopyToClipboard text={giftMessage}>
               <button
-                className="btn btn-primary ml-3"
+                className="btn btn-confirm ml-3"
                 onClick={(e) => e.stopPropagation()}>
-                Copy Message
+                Copy Tickets
               </button>
             </CopyToClipboard>
           </Col>
