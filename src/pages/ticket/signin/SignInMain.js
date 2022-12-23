@@ -13,10 +13,10 @@ import { randomAsHex } from '@polkadot/util-crypto';
 import BN from 'bn.js';
 import ParityQRSigner from '../ParityQRSigner';
 import { web3FromSource } from '@polkadot/extension-dapp';
-import Landing from './Landing';
+import Landing from './0-Landing';
 import ConnectButton from '../header/ConnectButton';
 import { Row, Col, Card, Container } from 'react-bootstrap';
-import ConnectAccount from './ConnectAccount';
+import ConnectAccount from './1-ConnectAccount';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import ConfirmGift from './ConfirmGift';
@@ -287,6 +287,7 @@ export default function GenerateMain () {
   );
 
   // Step-6 Gallery Event coming soon 
+
   const currentStepComponent = steps[step];
 
   let currentComponent;
