@@ -1,13 +1,13 @@
 {
-  "APP_NAME": "Kabocha Pizza",
-  "DEVELOPMENT_KEYRING": true,
+  "APP_NAME": "NF-Tickets",
+  "DEVELOPMENT_KEYRING": false,
   "RPC": {},
   "THEME": "kabocha",
   "MAX_AMOUNT": 10000,
-  "CLAIM_URL": "https://tickets.new-futures.co/#/enter",
+  "CLAIM_URL": "https://tickets.newfutures.network/#/enter",
   "KUSAMA_APP_URL": "https://gifts.kusama.network",
   "KABOCHA_APP_URL": "https://pizza.kabocha.network",
   "POLKADOT_APP_URL": "https://gifts.polkadot.network",
   "ADDED_FEE_MULTIPLIER": 2,
-  "CHAIN_SCANNER_URL": "https://polkadot.subscan.io"
+  "CHAIN_SCANNER_URL": "https://edgeware.subscan.io"
 }

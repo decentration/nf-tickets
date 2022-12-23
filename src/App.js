@@ -39,9 +39,12 @@ function Body () {
         </Route>
         
         <Route path={'/generate'}>
+        
         <BackgroundVideo />
        <div className="content">
+
           <GenerateMain />
+          
           
           
       
