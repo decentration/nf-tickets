@@ -9,7 +9,7 @@ export default function ConnectAccount ({ setAccountSourceHandler }) {
   return (
     <Card.Body className="d-flex flex-column landing">
       <CardHeader
-        title={`Claim Your ${giftTheme?.content} Pizza`}
+        title={`Claim Your ${giftTheme?.content} funded ticket`}
         cardText={[
           `Create a new ${giftTheme?.network} address to store your funds`,
           <br />,

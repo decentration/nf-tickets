@@ -8,17 +8,20 @@ const QrCode = ({ number }) => {
 
   const downloadQRCode = (e) => {
     e.preventDefault();
-    setTicket("");
+    setTicket(number);
   };
 
   const qrCodeEncoder = (e) => {
     setTicket(e.target.value);
   };
 
+  const urlValue = ['https://events.new-futures.co/enter/' + number.toString()].join();
+
+
   const qrcode = (
     <QRCodeCanvas
       id="qrCode"
-      value={number}
+      value={urlValue}
       size={300}
       bgColor={"#00ff00"}
       level={"H"}
@@ -31,9 +34,15 @@ const QrCode = ({ number }) => {
         <form onSubmit={downloadQRCode}>
           {/* <label>Enter URL</label> */}
           
-          <button className="btn btn-secondary" type="submit" disabled={!number}>
+          <input
+           type="hidden"
+            value={urlValue}
+            
+          />
+         
+          {/* <button className="btn btn-secondary" type="submit" >
             Download QR code
-          </button>
+          </button> */}
         </form>
       </div>
     </div>

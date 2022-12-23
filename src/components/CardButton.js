@@ -4,6 +4,8 @@ import { CaretRight } from 'phosphor-react';
 import signerLogo from '../images/signer_logo_128.png';
 import extensionLogo from '../images/extension_logo_128.png';
 import ledgerLogo from '../images/ledger_logo_128.png';
+import talismanLogo from '../images/talisman.jpeg';
+
 
 const CardButton = ({ children, logo, onClick, smallFont }) => {
   let image = '';
@@ -12,6 +14,10 @@ const CardButton = ({ children, logo, onClick, smallFont }) => {
     image = signerLogo;
   } else if (logo === 'extension') {
     image = extensionLogo;
+  } else if (logo === 'talisman') {
+    image = talismanLogo;
+  // } else if (logo === 'newf') {
+  //   image = talismanLogo;
   } else if (logo === 'ledger') {
     image = ledgerLogo;
   }

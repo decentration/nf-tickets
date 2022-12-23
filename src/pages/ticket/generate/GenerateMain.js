@@ -2,6 +2,7 @@ import { createContext, useState, useCallback, createElement } from 'react';
 import GenerateGift from './GenerateGift';
 import PresentGift from './PresentGift';
 import ConnectExtension from '../accounts/ConnectExtension';
+// import ConnectTalisman from '../accounts/ConnectTalisman';
 import LedgerMain from '../accounts/LedgerWallet/LedgerMain';
 import ConnectSigner from '../accounts/ConnectSigner';
 import Processing from '../../../components/Processing';
@@ -232,6 +233,7 @@ export default function GenerateMain () {
 
   const accountOption = {
     EXTENSION: ConnectExtension,
+    // TALISMAN: ConnectTalisman,
     HARDWALLET: LedgerMain,
     SIGNER: ConnectSigner
   };

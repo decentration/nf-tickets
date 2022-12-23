@@ -5,6 +5,7 @@ import config from '../../../config';
 import { stringHelpers } from '../../../utils';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import QrCode from '../QR/QrCode';
+import '../../../index.css';
 
 
 export default function PresentGift ({ giftInfo, removeGiftHandler }) {
@@ -47,7 +48,18 @@ export default function PresentGift ({ giftInfo, removeGiftHandler }) {
         />
         <Row className="justify-content-center align-items-center my-4 mx-2">
           <Col className="px-0">
-            <div className="printable border rounded p-4">
+            <div
+          
+                  className="printable"
+                  style={{
+                    display: 'block',
+                    padding: '20px',
+                   background:'black',
+                   color: 'white',
+                    borderRadius: '10px',
+                    border: 'dotted 2px black',
+                  }}>
+               
               <p>{greeting}</p>
               <p><b>Ticket Price:</b> {`${amountStr}`} </p>
               <p>If your ticket is related to a virtual event you can enter here:</p>
@@ -68,15 +80,16 @@ export default function PresentGift ({ giftInfo, removeGiftHandler }) {
                 
                 <p>If the ticket is related to a live event then share the ticket number or the QR code at the door.</p>
                 <strong
-                  className="bg-gray"
+                  className="black"
                   style={{
                     display: 'block',
                     textAlign: 'center',
                     padding: '5px',
+                    color: "white",
                     marginTop: '20px',
                     marginBottom: '20px',
                     borderRadius: '5px',
-                    border: 'dotted 2px black',
+                    border: 'dotted 2px white',
                   }}>
                   {formattedSecret}
                 </strong>
@@ -85,7 +98,11 @@ export default function PresentGift ({ giftInfo, removeGiftHandler }) {
                 {`${giftTheme?.network}`} account.</p>
               
               <p>Enjoy!</p>
-              <QrCode number={secret} />
+                <div style={{
+                  textAlign: 'center',
+                  alignItems: 'center'}}>
+                 <QrCode number={secret} />
+                </div>
               </div>
           </Col>
         

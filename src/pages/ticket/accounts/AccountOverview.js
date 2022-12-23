@@ -8,6 +8,7 @@ import { stringHelpers } from '../../../utils';
 import extensionLogo from '../../../images/extension_logo_128.png';
 import ledgerLogo from '../../../images/ledger_logo_128.png';
 import signerLogo from '../../../images/signer_logo_128.png';
+import talismanLogo from '../../../images/talisman.jpeg';
 import { CaretRight } from 'phosphor-react';
 
 const balanceDecimalPoints = 5;
@@ -34,6 +35,9 @@ const WalletInfoField = ({ title, subtitle, ...props }) => {
   if (title === 'Polkadot Extension') {
     logo = extensionLogo;
     href = 'https://polkadot.js.org/extension/';
+  } else if (title === 'Talisman (...coming soon') {
+    logo = talismanLogo;
+    href = 'https://talisman.xyz';
   } else if (title === 'Parity Signer') {
     logo = signerLogo;
     href = 'https://www.parity.io/technologies/signer/';

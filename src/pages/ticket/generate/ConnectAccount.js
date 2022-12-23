@@ -16,7 +16,7 @@ export default function ConnectAccount () {
     <Card.Body>
       <CardHeader title="Connect Account" />
       <Row className="align-items-center flex-column justify-content-center text-center pt-5">
-        <Col sm="6">
+        <Col xs="12">
           <CardButton
             logo="extension"
             onClick={() => optionSelectHandler('EXTENSION')}>
@@ -24,6 +24,7 @@ export default function ConnectAccount () {
           </CardButton>
         </Col>
       </Row>
+      
       <Row className="pt-4">
         <Col xs="12">
           <hr />
@@ -42,6 +43,30 @@ export default function ConnectAccount () {
             logo="signer"
             onClick={() => optionSelectHandler('SIGNER')}>
             Parity Signer
+          </CardButton>
+        </Col>
+      </Row>
+      <Row className="pt-4">
+        <Col xs="12">
+          <hr />
+        </Col>
+      </Row>
+      <Row className="pt-4 ">
+        <Col xs="12">
+          <CardButton
+            disabled={true}
+            logo="talisman"
+          >
+            <div className='text-black/25'>Talisman {`(...coming soon)`}</div>
+          </CardButton>
+        </Col>
+      </Row>
+      <Row className="pt-4">
+        <Col xs="12">
+          <CardButton
+           disabled={true}
+            logo="newf">
+            <div className="text-black/25">New-Futures Wallet {`(...coming soon)`}</div>
           </CardButton>
         </Col>
       </Row>
