@@ -5,6 +5,7 @@ import signerLogo from '../images/signer_logo_128.png';
 import extensionLogo from '../images/extension_logo_128.png';
 import ledgerLogo from '../images/ledger_logo_128.png';
 import talismanLogo from '../images/talisman.jpeg';
+import newfLogo from '../images/newf.png';
 
 
 const CardButton = ({ children, logo, onClick, smallFont }) => {
@@ -16,8 +17,8 @@ const CardButton = ({ children, logo, onClick, smallFont }) => {
     image = extensionLogo;
   } else if (logo === 'talisman') {
     image = talismanLogo;
-  // } else if (logo === 'newf') {
-  //   image = talismanLogo;
+  } else if (logo === 'newf') {
+    image = newfLogo;
   } else if (logo === 'ledger') {
     image = ledgerLogo;
   }
@@ -45,5 +46,4 @@ const CardButton = ({ children, logo, onClick, smallFont }) => {
         </button>
   );
 };
-
 export default CardButton;

@@ -30,7 +30,7 @@ export default function ConfirmGift ({
             address,
             chainAmount || 0
           );
-          const remarkTx = api.tx.system.remarkWithEvent('gift::create');
+          const remarkTx = api.tx.system.remarkWithEvent('newf::create');
           const txs = [transferTx, remarkTx];
           // const info = await api.tx.utility.batchAll(txs).paymentInfo(address);
           const infotransfer = await api.tx.balances

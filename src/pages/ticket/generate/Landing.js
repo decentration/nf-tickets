@@ -9,7 +9,7 @@ export default function Landing () {
   const { apiState, giftTheme } = useSubstrate();
   return (
     <>
-      <Card.Body className="d-flex flex-column landing">
+      <Card.Body className='d-flex flex-column landing'>
         <CardHeader
           title={`${giftTheme?.network}`}
           cardText={`New-Futures welcomes all EDG Holders to gain access to our interactive digital galleries and realms. We've also launched NFTickets.`}
