@@ -11,9 +11,9 @@ export default function ConnectButton () {
     <>
     
       
-            <div className="">
+            <div className="pt-2">
               <button
-                className="bg-white p-0 tracking-widest	border-0 text-xl"
+                className="btn btn-primary btn-lg mr-2 "
                 disabled={apiState !== 'READY'}
                 onClick={() => nextStep()}>
                 CONNECT

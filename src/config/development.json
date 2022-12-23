@@ -1,5 +1,5 @@
 {
-  "PROVIDER_SOCKET": "wss://kabocha.jelliedowl.com",
+  "PROVIDER_SOCKET": "wss://edgeware.jelliedowl.net",
   "DEVELOPMENT_KEYRING": true,
-  "CLAIM_URL":"https://pizza.kabocha.network/#/claim"
+  "CLAIM_URL":"https://gallery.new-futures.co/#/enter"
 }

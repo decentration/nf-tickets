@@ -142,7 +142,9 @@ export default function AccounSelector ({
   balances,
   token,
   selectedAccount,
-  setSelectedAccount
+  setSelectedAccount,
+  selectedName,
+  setSelectedName
 }) {
   const selectAccountHandler = (idx) => {
     setSelectedAccount(accounts[idx]);

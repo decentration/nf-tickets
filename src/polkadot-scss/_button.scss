@@ -37,17 +37,18 @@
 }
 
 .btn-primary {
-  color: brown;
-  background-color: rgb(255, 255, 14) !important;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255) !important;
   position: relative;
   z-index: 1;
   overflow: hidden;
-  border: solid 8px rgb(172, 66, 0) !important;
+  border: solid 0px rgb(255, 255, 255) !important;
   transition: all 0.2s ease, border 1ms ease;
   will-change: transform;
   transform: scale(0.999);
-  padding: 50px;
-  border-radius: 50%;
+  padding: 0px 5px 0px 5px;
+  border-radius: 3vw;
+  font-size: 20px;
 
   &:before {
     content: "";

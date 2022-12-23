@@ -20,6 +20,8 @@ import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import ConfirmGift from './ConfirmGift';
 import analytics from '../../../analytics';
+import BackgroundVideo from '../home/BackgroundVideo';
+
 
 const GenerateContext = createContext();
 export { GenerateContext };
@@ -172,7 +174,7 @@ export default function GenerateMain () {
       if (account?.meta?.isExternal) {
         setShowSigner(true);
       } else {
-        setProcessingMsg(`Generating the gift on ${giftTheme.network}...`);
+        setProcessingMsg(`Generating the Ticket on ${giftTheme.network}...`);
         setProcessing(true);
       }
     }
@@ -191,7 +193,7 @@ export default function GenerateMain () {
       const mnemonic = secret;
       const giftAccountPair = keyring.createFromUri(
         mnemonic,
-        { name: 'interim_gift' },
+        { name: 'interim_ticket' },
         'sr25519'
       );
 
@@ -282,6 +284,8 @@ export default function GenerateMain () {
     <PresentGift giftInfo={giftInfo} removeGiftHandler={removeGiftHandler} />
   );
 
+  // Step-6 Gallery Event coming soon 
+
   const currentStepComponent = steps[step];
 
   let currentComponent;
@@ -300,6 +304,7 @@ export default function GenerateMain () {
     currentComponent = currentStepComponent;
   }
   return (
+   
     <GenerateContext.Provider
       value={{
         nextStep,
@@ -308,10 +313,12 @@ export default function GenerateMain () {
         setAccountSource
       }}>
       <Header selectedAccount={account?.address} />
+      
       <Container className="justify-content-center align-items-center">
+     
         <Row className="my-2 my-md-5 justify-content-center align-items-center">
           <Col className="my-md-3 d-flex justify-content-center align-items-center">
-            {step === 0 && giftTheme.network === 'Kabocha' && (
+            {step === 0 && giftTheme.network === 'NEW-FUTURES' && (
               <div className="landingpage">{currentComponent}</div>
             )}
             {step > 0 && (
@@ -340,7 +347,8 @@ export default function GenerateMain () {
           message={processingMsg}
         />
       </Container>
-      <Footer />
+      
     </GenerateContext.Provider>
+     
   );
 }

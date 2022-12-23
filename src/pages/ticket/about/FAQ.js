@@ -14,7 +14,7 @@ export default function FAQ ({ giftTheme }) {
       {giftTheme.content} is the utility token of {giftTheme.network}, and serves different functions in the network.
       Find out more about {giftTheme.network}&nbsp;
       <a
-        href={giftTheme.network === 'Kabocha' ? 'https://kabocha.network' : 'https://kusama.network'}
+        href={giftTheme.network === 'NEW-FUTURES' ? 'https://kabocha.network' : 'https://kusama.network'}
         target="_blank"
         rel="noopener noreferrer">
         here
@@ -27,7 +27,7 @@ export default function FAQ ({ giftTheme }) {
   const a3 =
     'We recommend gift givers share the gift secret either in person or via a trusted communication channel e.g. an encrypted chat app. Be wary of emails as they can be faked more easily. Once claimed, the gift secret does not hold any more value';
   const a4 =
-    `Please make sure to visit ${giftTheme.network === 'Kabocha' ? 'pizza.kabocha.network' : 'gifts.kusama.network'}. Entering information on a phishing site will result in a loss of funds. The gift secret should not be shared with anyone other than the intended recipient, as anyone with access to it can claim the gift. Remember that your seed phrase allows you to recover your account and funds. We will never ask you for your seed phrase, nor should you ever share it with anyone. Anyone with access to your seed phrase has access to your ${giftTheme.content}, so be sure to keep it safe. If you lose your seed phrase and get locked out of your account, you will not be able to recover your funds`;
+    `Please make sure to visit ${giftTheme.network === 'NEW-FUTURES' ? 'pizza.kabocha.network' : 'gifts.kusama.network'}. Entering information on a phishing site will result in a loss of funds. The gift secret should not be shared with anyone other than the intended recipient, as anyone with access to it can claim the gift. Remember that your seed phrase allows you to recover your account and funds. We will never ask you for your seed phrase, nor should you ever share it with anyone. Anyone with access to your seed phrase has access to your ${giftTheme.content}, so be sure to keep it safe. If you lose your seed phrase and get locked out of your account, you will not be able to recover your funds`;
   const a5 =
     'Try reaching out to your recipient personally. If your recipient still does not claim the gift, there is an option to revoke it and return the gift amount to your account.';
   const a6 = (

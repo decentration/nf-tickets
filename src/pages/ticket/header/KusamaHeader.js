@@ -1,4 +1,4 @@
-import { Dropdown, Nav, Navbar, Media, Row, Col, Button } from 'react-bootstrap';
+import { Dropdown, Nav, Navbar, Media, Row, Col } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router-dom';
 import { stringHelpers } from '../../../utils';
 import Identicon from '@polkadot/react-identicon';
@@ -6,20 +6,17 @@ import { Circle, DotsThree, ImageSquare } from 'phosphor-react';
 import config from '../../../config';
 import KusamaLogo from '../../../images/kusama_logo.png';
 import KusamaIcon from '../../../images/kusama_icon.png';
-//import KabochaIcon from '../../../images/kabocha.svg';
-import ConnectButton from './ConnectButton';
-import utils from '../../../substrate-lib/substrateUtils';
-
-
 
 const AccountInfoBox = ({ accountAddress }) => {
-  const addressStr = stringHelpers.truncateMiddle(accountAddress, 10);
-  //const nameString = getAccountName?.meta?.name;
+  const addressStr = stringHelpers.truncateMiddle(accountAddress, 5);
   return (
     <Media className="d-flex align-items-center">
-      <div className="mr-1">
-        {/* <img className="kab-logo" src={KabochaIcon} /> */}
-      </div>
+      <Identicon
+        className="mr-1"
+        value={accountAddress}
+        size={20}
+        theme="kusama"
+      />
       <Media.Body>
         <Row>
           <Col>
@@ -34,8 +31,6 @@ export default function Header ({ selectedAccount }) {
   const history = useHistory();
   const location = useLocation();
   const polkadotApp = config.POLKADOT_APP_URL;
-  const kusamaApp = config.KUSAMA_APP_URL;
-
   return (
     <>
       <Navbar
@@ -44,35 +39,33 @@ export default function Header ({ selectedAccount }) {
         variant="dark"
       >
         <Navbar.Brand>
-          {/* <a href="/" rel="noopener noreferrer"> */}
-            <div className="text-black">NEW-FUTURES</div>
-            {/* <img
+          <a href="/" rel="noopener noreferrer">
+            <img
               width={120}
               className="p-1 d-none d-sm-inline-block"
-              src={KabochaIcon}
-              alt={'Kabocha}
-            /> */}
-            {/* <img
+              src={KusamaLogo}
+              alt={'Kusama'}
+            />
+            <img
               width={42}
               className="p-1 d-sm-none"
-              src={KabochaIcon}
-              alt={'Kabocha}
-            /> */}
-          {/* </a> */}
-          
+              src={KusamaIcon}
+              alt={'Kusama'}
+            />
+          </a>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse
           id="basic-navbar-nav"
           className="justify-content-center"
         >
-          {/* <Nav className="nav-pills shadow-sm">
+          <Nav className="nav-pills shadow-sm">
             <Nav.Item>
               <Nav.Link
-                className={location.pathname === '/claim' && 'active'}
-                onClick={() => history.push('/claim')}
+                className={location.pathname === '/enter' && 'active'}
+                onClick={() => history.push('/enter')}
               >
-                Claim Pizza
+                Claim
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
@@ -80,14 +73,13 @@ export default function Header ({ selectedAccount }) {
                 className={location.pathname === '/generate' && 'active'}
                 onClick={() => history.push('/generate')}
               >
-                Gift Pizza
+                New Gift
               </Nav.Link>
             </Nav.Item>
-          </Nav> */}
-          
+          </Nav>
         </Navbar.Collapse>
         <div className="d-flex align-items-center justify-content-end">
-          {selectedAccount ? (
+          {selectedAccount && (
             <>
               <div className="d-none d-sm-block w-100 d-sm-none" />
               <div className="d-none d-sm-block flex-grow-0 justify-content-end mr-2 shadow-sm border-0 p-0">
@@ -97,21 +89,14 @@ export default function Header ({ selectedAccount }) {
                     fontWeight: '400',
                     height: '42px'
                   }}
-                  className="account-box align-items-center text-center d-flex bg-white  balance-text"
+                  className="account-box align-items-center text-center d-flex bg-transparent balance-text"
                 >
-                  <AccountInfoBox  accountAddress={selectedAccount} />
+                  <AccountInfoBox accountAddress={selectedAccount} />
                 </div>
               </div>
             </>
-          )
-        :
-        (
-          <ConnectButton />
-        )
-        
-        }
-          
-          {/* <Dropdown id="dropdown-item-button">
+          )}
+          <Dropdown id="dropdown-item-button">
             <Dropdown.Toggle
               className="btn-dropdown p-1 rounded shadow-sm"
               type="button"
@@ -129,9 +114,9 @@ export default function Header ({ selectedAccount }) {
                 onClick={() => history.push('/about')}
               >
                 <ImageSquare className="mr-2" size={18} />
-                About New-Futures
-              </Dropdown.Item> */}
-              {/* {polkadotApp && (
+                About Gifts
+              </Dropdown.Item>
+              {polkadotApp && (
                 <Dropdown.Item
                   className="px-3"
                   onClick={(e) => {
@@ -140,25 +125,11 @@ export default function Header ({ selectedAccount }) {
                   }}
                 >
                   <Circle className="mr-2" size={18} />
-                  Gift EDG
+                  Gift DOT
                 </Dropdown.Item>
-                
               )}
-               {kusamaApp && (
-                <Dropdown.Item
-                  className="px-3"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open(kusamaApp, '_blank');
-                  }}
-                >
-                  <Circle className="mr-2" size={18} />
-                  Gift KSM
-                </Dropdown.Item>
-                
-              )} */}
-            {/* </Dropdown.Menu>
-          </Dropdown> */}
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
       </Navbar>
     </>

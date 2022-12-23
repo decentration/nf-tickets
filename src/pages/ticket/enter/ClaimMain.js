@@ -64,7 +64,7 @@ export default function ClaimMain () {
       const mnemonic = secret;
       const giftAccountPair = keyring.createFromUri(
         mnemonic,
-        { name: 'interim_gift' },
+        { name: 'interim_ticket' },
         'sr25519'
       );
 

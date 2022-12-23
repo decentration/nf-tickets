@@ -1,30 +1,36 @@
 import { SubstrateContextProvider, useSubstrate } from './substrate-lib';
 import { DeveloperConsole } from './substrate-lib/components';
 import Processing from './components/Processing';
-import AccountOverview from './pages/gift/accounts/AccountOverview';
-import ExtensionOnboarding from './pages/gift/accounts/ExtensionOnboarding';
+import AccountOverview from './pages/ticket/accounts/AccountOverview';
+import ExtensionOnboarding from './pages/ticket/accounts/ExtensionOnboarding';
 import {
   HashRouter as Router,
   Switch,
   Route,
   Redirect
 } from 'react-router-dom';
-import AboutMain from './pages/gift/about/AboutMain';
-import ClaimMain from './pages/gift/claim/ClaimMain';
-import GenerateMain from './pages/gift/generate/GenerateMain';
-import PrivacyPolicy from './pages/gift/policy/PrivacyPolicy';
-import GiftSecretScanner from './pages/gift/GiftSecretScanner';
+import AboutMain from './pages/ticket/about/AboutMain';
+import ClaimMain from './pages/ticket/enter/ClaimMain';
+import GenerateMain from './pages/ticket/generate/GenerateMain';
+import ConnectAccount from './pages/ticket/generate/ConnectAccount';
+import HomeMain from './pages/ticket/home/HomeMain';
+import BackgroundVideo from './pages/ticket/home/BackgroundVideo';
+
+import PrivacyPolicy from './pages/ticket/policy/PrivacyPolicy';
+import GiftSecretScanner from './pages/ticket/GiftSecretScanner';
+import './polkadot.scss'
 
 function Body () {
   const { apiState, giftTheme } = useSubstrate();
 
   return (
     <>
+    
       <Switch>
         <Route path={'/about'}>
           <AboutMain />
         </Route>
-        <Route path={'/claim'}>
+        <Route path={'/enter'}>
           <ClaimMain />
           <Processing
             show={apiState !== 'READY'}
@@ -32,11 +38,22 @@ function Body () {
           />
         </Route>
         <Route path={'/generate'}>
+          <BackgroundVideo />
+       <div className="content">
           <GenerateMain />
+          </div>
+      
+   
           <Processing
             show={apiState !== 'READY'}
             message={`Connecting to ${giftTheme.network}...`}
           />
+          
+        </Route>
+        <Route path={'/home'}>
+          <HomeMain />
+          
+        <Route />
         </Route>
         <Route path={'/account/:accountAddress'}>
           <AccountOverview />
@@ -68,6 +85,7 @@ function Body () {
       </Switch>
     </>
   );
+
 }
 
 export default function App () {

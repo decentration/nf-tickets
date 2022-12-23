@@ -53,10 +53,10 @@ export default function Header ({ selectedAccount }) {
           <Nav className="nav-pills shadow-sm p-1">
             <Nav.Item>
               <Nav.Link
-                className={location.pathname === '/claim' && 'active'}
-                onClick={() => history.push('/claim')}
+                className={location.pathname === '/enter' && 'active'}
+                onClick={() => history.push('/enter')}
               >
-                Claim
+                Enter
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
@@ -64,7 +64,7 @@ export default function Header ({ selectedAccount }) {
                 className={location.pathname === '/generate' && 'active'}
                 onClick={() => history.push('/generate')}
               >
-                New Gift
+                Buy Ticket
               </Nav.Link>
             </Nav.Item>
           </Nav>
@@ -101,7 +101,7 @@ export default function Header ({ selectedAccount }) {
                 onClick={() => history.push('/about')}
               >
                 <Gift className="mr-2" size={18} />
-                About Gifts
+                About Interactive Gallery
               </Dropdown.Item>
               {kusamaApp && (
                 <Dropdown.Item
@@ -124,7 +124,7 @@ export default function Header ({ selectedAccount }) {
                   }}
                 >
                   <Bird className="mr-2" size={18} />
-                  Gift Pizza
+                  Buy Ticket
                 </Dropdown.Item>
               )}
             </Dropdown.Menu>

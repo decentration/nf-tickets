@@ -100,7 +100,7 @@ export default function GenerateGift ({
       amountFloat && maxAmountFloat && amountFloat > maxAmountFloat;
     if (isTooHigh) {
       setAmountWarning(
-        `This looks like a large amount for a gift. We recommend direct account transactions for gifts larger than ${maxAmountStr}.`
+        `This looks like a large amount for a ticket. We recommend direct account transactions for tickets larger than ${maxAmountStr}.`
       );
     } else {
       setAmountWarning(null);
@@ -118,7 +118,7 @@ export default function GenerateGift ({
     const totalChainAmount = giftChainAmount?.add(totalTxFees);
     // validate gift amount
     if (!amount) {
-      return 'Please enter the gift amount.';
+      return 'Please enter the ticket amount you would like to pay.';
     }
     if (giftChainAmount) {
       // check if the gift amount is above existential deposit
@@ -189,8 +189,8 @@ export default function GenerateGift ({
     <>
       <Card.Body className="d-flex flex-column">
         <CardHeader
-          title="Gift Details"
-          cardText={`Enter the recipient’s name and the amount of ${giftTheme?.content} you would like to send.`}
+          title="New-Futures"
+          cardText={`Enter your name and the amount of ${giftTheme?.content} you would like to spend on the ticket.`}
           backClickHandler={() => prevStep()}
         />
         <Formik
@@ -221,7 +221,7 @@ export default function GenerateGift ({
                   <Form autoComplete="off" className="w-100">
                     <Form.Group>
                       <Form.Label htmlFor="recipientName">
-                        Recipient Name
+                        Name/Username
                       </Form.Label>
                       <Form.Control
                         id="recipientName"

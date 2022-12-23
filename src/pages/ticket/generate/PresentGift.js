@@ -4,6 +4,8 @@ import { useSubstrate, utils } from '../../../substrate-lib';
 import config from '../../../config';
 import { stringHelpers } from '../../../utils';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import QrCode from '../QR/QrCode';
+
 
 export default function PresentGift ({ giftInfo, removeGiftHandler }) {
   const { email, name, amount, secret } = giftInfo || {};
@@ -12,10 +14,10 @@ export default function PresentGift ({ giftInfo, removeGiftHandler }) {
   const mailSubject = `Someone has sent you ${giftTheme?.content}`;
   const claimUrl = config.CLAIM_URL;
   const formattedSecret = secret && stringHelpers.formatGiftSecret(secret);
-  const greeting = name ? `Hey ${name?.trim()}!` : 'Hey!';
+  const greeting = name ? `Name: ${name?.trim()}!` : 'Your ticket!';
   const giftMessage =
     `${greeting}\n` +
-    `I'm sending you ${amountStr} as a gift! You can go to\n\n` +
+    `Ticket for Interactive Gallet bought for ${amountStr}. You can go to\n\n` +
     `${claimUrl}\n\n` +
     `and type in the following gift secret to claim your ${giftTheme?.content}.\n\n` +
     `${formattedSecret}\n\n` +
@@ -38,16 +40,17 @@ export default function PresentGift ({ giftInfo, removeGiftHandler }) {
     <>
       <Card.Body>
         <CardHeader
-          title={'Share Your Gift'}
+          title={'Your Ticket'}
           cardText={
-            'Your gift was successfully created! Add a message and send it via your favourite messaging app, or print it out and give it in person.'
+            'Your ticket was successfully generated! Be sure to save the ticket to provide on entry to the IRL or a virtual event.'
           }
         />
         <Row className="justify-content-center align-items-center my-4 mx-2">
           <Col className="px-0">
             <div className="printable border rounded p-4">
               <p>{greeting}</p>
-              <p>I'm sending you {`${amountStr}`} as a gift! You can go to</p>
+              <p><b>Ticket Price:</b> {`${amountStr}`} </p>
+              <p>If your ticket is related to a virtual event you can enter here:</p>
               <p>
                 <em
                   style={{
@@ -61,7 +64,9 @@ export default function PresentGift ({ giftInfo, removeGiftHandler }) {
               </p>
               <p>
                 and type in the following gift secret to claim your{' '}
-                {`${giftTheme.content}`}.
+                {`${giftTheme.content}`}.</p>
+                
+                <p>If the ticket is related to a live event then share the ticket number or the QR code at the door.</p>
                 <strong
                   className="bg-gray"
                   style={{
@@ -70,23 +75,28 @@ export default function PresentGift ({ giftInfo, removeGiftHandler }) {
                     padding: '5px',
                     marginTop: '20px',
                     marginBottom: '20px',
-                    borderRadius: '5px'
+                    borderRadius: '5px',
+                    border: 'dotted 2px black',
                   }}>
                   {formattedSecret}
                 </strong>
+                <p>
                 The website will walk you through the steps to create your own secure{' '}
-                {`${giftTheme?.network}`} account.
-              </p>
+                {`${giftTheme?.network}`} account.</p>
+              
               <p>Enjoy!</p>
-            </div>
+              <QrCode number={secret} />
+              </div>
           </Col>
+        
         </Row>
+        
         <Row>
           <Col className="px-5 flex-column flex-md-row d-flex justify-content-end">
             <button
               className="btn btn-link ml-3"
               onClick={() => removeGiftHandler(secret)}>
-              Remove Gift
+              Refund Ticket
             </button>
             <button
               className="btn btn-link ml-3"

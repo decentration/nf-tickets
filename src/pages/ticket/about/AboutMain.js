@@ -22,7 +22,7 @@ export default function AboutMain () {
             style={{ maxWidth: '920px' }}>
             New-Futures welcomes all EDG Holders to gain access to our digital gallery. 
 
-            Click below to sign in.
+            Click "connect" to sign in.
           </p>
         </div>
         <ProcessExplainerCard giftTheme={giftTheme} />

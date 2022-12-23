@@ -4,8 +4,8 @@ import CardHeader from '../../components/CardHeader';
 import { useSubstrate, giftProvider } from '../../substrate-lib';
 import { stringHelpers } from '../../utils';
 import config from '../../config';
-import Header from '../gift/header/Header';
-import Footer from '../gift/footer/Footer';
+import Header from '../ticket/header/Header';
+import Footer from '../ticket/footer/Footer';
 
 export default function GiftSecretScanner () {
   const { keyring, api, apiState, giftTheme } = useSubstrate();
@@ -26,7 +26,7 @@ export default function GiftSecretScanner () {
     if (!error) {
       const giftAccountPair = keyring.createFromUri(
         secret,
-        { name: 'interim_gift' },
+        { name: 'interim_ticket' },
         'sr25519'
       );
       setGiftAccountPair(giftAccountPair);
@@ -71,11 +71,11 @@ export default function GiftSecretScanner () {
             >
               <Card.Body className="d-flex flex-column">
                 <CardHeader
-                  title={'Scan A Gift'}
+                  title={'Scan a Ticket'}
                   cardText={[
                     'Enter the ',
-                    <b>gift secret</b>,
-                    ' to browse the gift and scan the gift transactions.'
+                    <b>ticket number</b>,
+                    ' to browse the ticket and scan the ticket transactions.'
                   ]}
                 />
                 <>
@@ -84,7 +84,7 @@ export default function GiftSecretScanner () {
                       <Form autoComplete="off" className="w-100">
                         <Form.Group>
                           <Form.Label htmlFor="giftSecret">
-                            Gift Secret
+                            Ticket Number
                           </Form.Label>
                           <Form.Control
                             id="giftSecret"

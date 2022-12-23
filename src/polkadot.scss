@@ -1,7 +1,7 @@
 // Custom.scss
 
 // set font family
-$font-family-base: 'Space Grotesk', sans-serif;
+$font-family-base:  'Chivo Mono regular', 'Space Grotesk', 'Mulish', 'Avenir',  sans-serif;
 
 // Button
 $btn-border-radius: 1.5rem;
@@ -15,7 +15,7 @@ $btn-border-radius-sm: 1.5rem;
   background-color: #fff !important;
   border-radius: 8px !important;
   border-color: #d5dbe0 !important;
-  color: #1e1e1e !important;
+  color: #000000 !important;
   padding: 0.75rem !important;
   text-align: left !important;
 }
@@ -47,7 +47,7 @@ $card-border-radius: 20px;
 
 // Set booststrap custom theme
 $theme-colors: (
-  'primary': #6aff00,
+  'primary': #000000,
 );
 
 $gray-100: #f9fafb;
@@ -133,14 +133,14 @@ $h5-font-size: 1rem;
   }
 
   #dropdownMenuButton {
-    background-color: yellow !important;
+    background-color: rgb(255, 255, 255) !important;
     color: rgb(250, 121, 0);
     transition: none;
     transform: none;
     padding: 0.5625rem !important;
     border-radius: 100px !important;
     border: 5px !important;
-    border-color: brown !important;
+    border-color: rgb(255, 255, 255) !important;
     border-style: solid !important;
     border-width: 5px !important;
 
@@ -170,7 +170,7 @@ $h5-font-size: 1rem;
 }
 
 .nav-pills {
-  background-color: yellow;
+  background-color: rgb(255, 255, 255);
   color: rgb(48, 48, 48) !important;
   
 }
@@ -195,6 +195,17 @@ $border-radius: 0.5rem;
 
 .image-box:hover {
   transform: scale(1.25);
+}
+
+
+.content {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  
+  padding: 0;
 }
 
 // import should be at the end

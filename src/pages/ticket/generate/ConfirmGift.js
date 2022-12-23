@@ -55,19 +55,19 @@ export default function ConfirmGift ({
   const amountStr = amount && utils.formatBalance(amount, chainInfo?.token, 5);
   const feeStr = giftFee && utils.formatBalance(giftFee, chainInfo?.token, 5);
 
-  const checkboxLabel = 'I have stored the gift secret in a safe place.';
+  const checkboxLabel = 'I have stored the ticket number in a safe place.';
   const [checked, setChecked] = useState(false);
   const [checkedError, setCheckedError] = useState('');
-  const checkedErrorMessage = 'Please confirm you have stored the gift secret.';
+  const checkedErrorMessage = 'Please confirm you have stored the Ticket Number.';
 
   return (
     <>
       <Card.Body className="d-flex flex-column">
         <CardHeader
-          title={'Confirm Gift Details'}
+          title={'Confirm Ticket Order'}
           cardText={[
-            'Please confirm the details below to generate the gift and write down the ',
-            <b>gift secret</b>,
+            'Please confirm the details below to generate the ticket and write down the ',
+            <b>Ticket Number</b>,
             '.'
           ]}
           backClickHandler={() => prevStep()}
@@ -84,18 +84,18 @@ export default function ConfirmGift ({
                 </Col>
                 <Col xs={12} sm={6}>
                   <div className="mb-1">
-                    <b>Gift Amount</b>
+                    <b>Order Amount</b>
                   </div>
                   <div>{amountStr}</div>
                   <small className="text-muted">
-                    {feeStr ? `+ ${feeStr} fees` : '+ gift fees'}
+                    {feeStr ? `+ ${feeStr} fees` : '+ fees'}
                   </small>
                 </Col>
               </Row>
               <Row>
                 <Col>
                   <div className="mb-1">
-                    <b>Gift Secret</b>
+                    <b>Ticket Number</b>
                   </div>
                   <div>{formattedSecret}</div>
                 </Col>
@@ -130,7 +130,7 @@ export default function ConfirmGift ({
               }
             }}
           >
-            Generate Gift
+           Buy New-Futures Ticket
           </button>
         </div>
       </Card.Body>
