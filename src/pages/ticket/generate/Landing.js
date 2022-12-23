@@ -12,7 +12,7 @@ export default function Landing () {
       <Card.Body className="d-flex flex-column landing">
         <CardHeader
           title={`${giftTheme?.network}`}
-          cardText={`New-Futures welcomes all EDG Holders to gain access to our interactive digital galleries and realms. Click "connect" to sign in..`}
+          cardText={`New-Futures welcomes all EDG Holders to gain access to our interactive digital galleries and realms. We've also launched NFTickets.`}
         />
         <Row className="justify-content-center align-items-center">
           <Col className="d-flex flex-column justify-content-around align-items-center">
