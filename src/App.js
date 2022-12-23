@@ -18,14 +18,13 @@ import BackgroundVideo from './pages/ticket/home/BackgroundVideo';
 
 import PrivacyPolicy from './pages/ticket/policy/PrivacyPolicy';
 import GiftSecretScanner from './pages/ticket/GiftSecretScanner';
-import './polkadot.scss'
+import './polkadot.scss';
 
 function Body () {
   const { apiState, giftTheme } = useSubstrate();
 
   return (
     <>
-    
       <Switch>
         <Route path={'/about'}>
           <AboutMain />
@@ -37,29 +36,18 @@ function Body () {
             message={`Connecting to ${giftTheme.network}...`}
           />
         </Route>
-        
         <Route path={'/generate'}>
-        
         <BackgroundVideo />
-       <div className="content">
-
+        <div className="content">
           <GenerateMain />
-          
-          
-          
-      
-   
           <Processing
             show={apiState !== 'READY'}
             message={`Connecting to ${giftTheme.network}...`}
           />
-          </div>
-          
+        </div>
         </Route>
         <Route path={'/home'}>
           <HomeMain />
-          
-        <Route />
         </Route>
         <Route path={'/account/:accountAddress'}>
           <AccountOverview />
